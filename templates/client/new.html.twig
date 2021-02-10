@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau client{% endblock %}
+
+{% block body %}
+    <div class="underline">
+        <h2>{{ controller_name }}</h2>
+    </div>
+
+    {{ form_start(new_client_form) }}
+
+    <div class="form-group">
+        <label for="">Prénom </label>
+        {{ form_widget(new_client_form.name) }}
+    </div>
+
+    <div class="form-group">
+        <label for="">Nom </label>
+        {{ form_widget(new_client_form.familyName) }}
+    </div>
+
+    <div class="form-group">
+        <label for="">Numéro de TVA </label>
+        {{ form_widget(new_client_form.VATnumber) }}
+    </div>
+
+    <div class="form-group">
+        <label for="">Code postal</label>
+        {{ form_widget(new_client_form.Zipcode) }}
+    </div>
+
+    <button type="submit">Ajouter</button>
+
+    {{ form_end(new_client_form) }}
+
+{% endblock %}

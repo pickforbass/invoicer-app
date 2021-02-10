@@ -1,0 +1,176 @@
+@import "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap";
+
+/*
+#004056
+#2C858D
+#74CEB7
+#C9FFD5
+#FFFFCB
+ */
+/** Set basic elements & most used elements **/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 80vh;
+}
+
+
+header {
+    min-height: 11em;
+    color:white;
+    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004056', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%; font:
+        18px/1.5 sans-serif;
+}
+
+
+.example-wrapper code {
+    background: #F5F5F5;
+    padding: 2px 6px; }
+
+
+h1 {
+    margin-top: 0;
+    padding : 2em;
+}
+
+h2, h3 {
+    background-color: white;
+    height: 1.5em;
+}
+
+
+.underline {
+    height: 2.4em;
+    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%,rgba(255,255,255,0) 100%);
+    margin-bottom: 3em;
+    border-radius: 3px;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+/** Setting main navbar **/
+
+#navbar {
+    padding-top: 4rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 15em;
+    box-shadow: 3px 0px 10px -1px rgba(0,0,0,0.75);
+    min-height: 80em;
+}
+
+
+#main-menu li {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+
+.main-menu-content {
+    align-self: center;
+}
+
+
+#container {
+    display: inline-block;
+    width : 60em;
+    margin-left: 2em;
+}
+
+
+/* Dashboard elements */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.flex-container a {
+    width: 33%;
+}
+
+
+.flex-container a:active {
+    transform: scale(0.9);
+    transition-duration: 200ms;
+}
+
+
+.dashboard-card {
+    min-height: 60px;
+    margin: 5%;
+    padding: 5px 10px;
+    background: linear-gradient(to right, rgba(0,64,86,.8) 1%,rgba(0,0,0,0) 100%);
+    color: white;
+    font-weight: bolder;
+    border-radius: 8px;
+    box-shadow: 0 10px 18px -10px rgba(0,0,0,0.75);
+}
+
+
+/* Form styling*/
+
+.form-group {
+    margin: 1rem;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 11rem;
+}
+
+.form-group input, .form-group select {
+    border: gray 1px solid;
+    border-radius: 4px;
+    display: inline-block;
+    min-height: 110%;
+
+}
+
+
+
+
+/*****  INVOICES PARTS *****/
+
+/* NEW INVOICE ELEMENTS (including form) */
+
+.invoice_field {
+    min-width: 247px;
+}
+
+
+/***** CLIENTS DETAILS *****/
+
+.client_name {
+    text-align: center;
+    font-size: 125%;
+}
+
+.client_information_name, .client_information_content {
+    display: inline-block;
+    min-width: 45% ;
+    padding: 0 15px;
+}
+
+.client_information_name {
+    text-align: right;
+}

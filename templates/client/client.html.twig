@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <div class="underline">
+            <h2>{{ controller_name }}</h2>
+        </div>
+
+        <h3 class="client_name">{{ client.name | upper }}</h3>
+
+        <div class="client_informations">
+            <div class="client_information_name"><h4>Adresse</h4></div>
+            <div class="client_information_content">{{ client.city | capitalize }}</div>
+
+            <div class="client_information_name"><h4>Numéro de TVA</h4></div>
+            <div class="client_information_content">{{ client.VATnumber }}</div>
+
+            <div class="client_information_name"><h4>Mail</h4></div>
+            <div class="client_information_content"></div>
+
+            <div class="client_information_name"><h4>GSM</h4></div>
+            <div class="client_information_content"></div>
+
+            <div class="client_information_name"><h4>Dernières factures</h4></div>
+            <div class="client_information_content"></div>
+
+
+        </div>
+
+    </div>
+{% endblock %}
+
