@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+    <h2>{{ controller_name }}</h2>
+
+    {{ form_start(new_task_form) }}
+
+        <div>
+            {{ form_label(new_task_form.name, 'Nom') }}
+            {{ form_widget(new_task_form.name) }}
+        </div>
+
+        <div>
+            {{ form_label(new_task_form.fee, 'Taux horaire') }}
+            {{ form_widget(new_task_form.fee, {attr: {
+                'value' : 50
+                }
+            })
+            }}
+        </div>
+
+    <button type="submit">Valider</button>
+    {{ form_end(new_task_form) }}
+{% endblock %}

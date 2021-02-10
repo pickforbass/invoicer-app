@@ -1,11 +1,7 @@
 table {
     width: 50vw;
-    margin: 0 auto 3em auto;
-}
-
-
-thead {
-    border: 1px solid black;
+    margin: 2em auto 3em auto;
+    border-collapse: collapse;
 }
 
 
@@ -19,9 +15,13 @@ th, td {
     padding:0;
 }
 
+tbody tr td {
+    padding: 1rem 3px 1rem 3px;
+}
+
 
 tbody tr:nth-child(odd) {
-    background-color: #d5d7d7;
+    background-color: #68c4c4;
 }
 
 
@@ -47,3 +47,6 @@ td[class$="_column"] {
     width: 25%;
 }
 
+.center {
+    text-align: center;
+}

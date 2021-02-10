@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('assets/styles/tables.css') }}>
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h2>{{ controller_name }}</h2>
+
+    <div>
+        <a href="{{ path('newTask') }}">Créer une nouvelle tâche</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <td class="name center">Désignation</td>
+            <td class="fee center ">Taux horaire</td>
+            <td class="modify center"></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td class="name">{{ task.name }}</td>
+                <td class="fee center">{{ task.fee }}</td>
+                <td class="modify center"><a href="#">Modifier</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}
