@@ -9,7 +9,9 @@
 
         <div>
             {{ form_label(new_task_form.name, 'Nom') }}
-            {{ form_widget(new_task_form.name) }}
+            {{ form_widget(new_task_form.name, {attr: {
+                'class': 'designation-name'
+            }}) }}
         </div>
 
         <div>

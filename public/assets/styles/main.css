@@ -19,7 +19,7 @@ html, body {
 header {
     min-height: 11em;
     color:white;
-    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%, rgb(116, 206, 183) 61%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004056', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
@@ -66,7 +66,7 @@ li {
     list-style-type: none;
 }
 
-/** Setting main navbar **/
+/** Setting navbar **/
 
 #navbar {
     padding-top: 4rem;
@@ -85,6 +85,7 @@ li {
 
 
 .main-menu-content {
+    margin-left: 7px;
     align-self: center;
 }
 
@@ -138,12 +139,17 @@ li {
     width: 11rem;
 }
 
-.form-group input, .form-group select {
+input, select {
     border: gray 1px solid;
-    border-radius: 4px;
+    border-radius: 5px;
     display: inline-block;
-    min-height: 110%;
+    min-height: 20px;
+    margin: 5px;
 
+}
+
+.designation-name {
+    min-width: 23rem;
 }
 
 
@@ -174,3 +180,5 @@ li {
 .client_information_name {
     text-align: right;
 }
+
+
