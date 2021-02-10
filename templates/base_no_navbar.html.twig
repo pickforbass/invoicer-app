@@ -17,36 +17,22 @@
     <section id="navbar">
         <nav>
             <ul id="main-menu">
-{#                <li>#}
-{#                        <span class="material-icons">#}
-{#                            date_range#}
-{#                        </span>#}
-{#                    <span>#}
-{#                            Calendrier#}
-{#                        </span>#}
-{#                </li>#}
                 <li>
-                    <a href="{{ path('clients') }}">
+                        <span class="material-icons">
+                            date_range
+                        </span>
+                    <span>
+                            Calendrier
+                        </span>
+                </li>
+                <li>
                         <span class="material-icons">
                             people_alt
                         </span>
-                        <span class="main-menu-content">
+                    <span class="main-menu-content">
                             Clients
                         </span>
-                    </a>
                 </li>
-
-                <li>
-                    <span class="material-icons">
-                        keyboard
-                    </span>
-                    <span class="main-menu-content">
-                            Tâches
-                    </span>
-
-                </li>
-
-
                 <li>
                         <span class="material-icons">
                             file_copy
@@ -65,15 +51,13 @@
                 </li>
             </ul>
         </nav>
-
     </section>
     <section id="container">
         {% block body %}
         {% endblock %}
     </section>
-
 </main>
 
-{% block script %}{% endblock %}
+{% block javascripts %}{% endblock %}
 </body>
 </html>
