@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+    <h2>{{ task.Name }}</h2>
+
+
+    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.Name, "Description") }}
+        {{ form_widget(form.Name, {attr: {"class":"designation-name"}}) }}
+    </div>
+
+    <div>
+        {{ form_label(form.fee, "Taux horaire") }}
+        {{ form_widget(form.fee, {attr: {
+            "size":"6"
+        }})
+        }}
+    </div>
+    <button type="submit">Modifier</button>
+    {{ form_end(form) }}
+
+
+{% endblock %}

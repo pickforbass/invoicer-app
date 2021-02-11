@@ -50,7 +50,7 @@ h2, h3 {
 .underline {
     height: 2.4em;
     background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%,rgba(255,255,255,0) 100%);
-    margin-bottom: 3em;
+    margin-bottom: 1.5em;
     border-radius: 3px;
 }
 
@@ -64,6 +64,12 @@ a {
 
 li {
     list-style-type: none;
+}
+
+.to-new-item {
+    display: block;
+    padding: 0.1em 2em;
+    text-align: right;
 }
 
 /** Setting navbar **/
@@ -82,7 +88,6 @@ li {
     display: flex;
     margin-bottom: 2em;
 }
-
 
 .main-menu-content {
     margin-left: 7px;
@@ -128,7 +133,7 @@ li {
 }
 
 
-/* Form styling*/
+/**** Form styling *****/
 
 .form-group {
     margin: 1rem;
@@ -151,8 +156,6 @@ input, select {
 .designation-name {
     min-width: 23rem;
 }
-
-
 
 
 /*****  INVOICES PARTS *****/
@@ -182,3 +185,10 @@ input, select {
 }
 
 
+/**** Task Vues ****/
+
+/** for editing tasks**/
+label>span {
+    display: inline-block;
+    min-width: 6em;
+}

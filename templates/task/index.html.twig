@@ -14,7 +14,7 @@
     </div>
 
     <div>
-        <a href="{{ path('newTask') }}">Créer une nouvelle tâche</a>
+        <a href="{{ path('newTask') }}" class="to-new-item">Créer une nouvelle tâche</a>
     </div>
 
     <table>
@@ -30,7 +30,7 @@
             <tr>
                 <td class="name">{{ task.name }}</td>
                 <td class="fee center">{{ task.fee }}</td>
-                <td class="modify center"><a href="#">Modifier</a></td>
+                <td class="modify center"><a href="{{ path('updateTask', {id : task.id}) }}">Modifier</a></td>
             </tr>
         {% endfor %}
         </tbody>
