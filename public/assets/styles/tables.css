@@ -39,6 +39,7 @@ tbody tr:nth-child(odd) {
 td[class$="_main"] {
     padding-left: 1rem;
     width: 50%;
+    text-align: center;
 }
 
 

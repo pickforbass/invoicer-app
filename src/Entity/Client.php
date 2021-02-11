@@ -62,6 +62,11 @@ class Client
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $phone;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +176,18 @@ class Client
     public function setEmail(?string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(int $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }

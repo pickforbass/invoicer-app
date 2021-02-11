@@ -8,31 +8,32 @@
 - Lister les tâches ✔
 
 ##Client
-<input type="checkbox"> Créer un client <br>
-<input type="checkbox"> Voir la fiche, modifier un client, retrouver ses factures <br>
-<input type="checkbox"> Lister les clients <br>
+- Créer un client ✔
+- Voir la fiche, modifier un client, retrouver ses factures
+- Lister les clients ✔
 
 
 ##Utilisateur
-<input type="checkbox"> Créer un utilisateur <br>
-<input type="checkbox"> Modifier les données d'un utilisateur <br>
-<input type="checkbox"> Se connecter <br>
+- Créer un utilisateur
+- Modifier les données d'un utilisateur
+- Se connecter
 
 ##Factures
-<input type="checkbox"> Créer une facture (détail plus loin) <br>
-<input type="checkbox"> Modifier une facture <br>
-<input type="checkbox"> Lister les factures<br>
-<input type="checkbox"> Sauvegarder en PDF une facture<br>
-<input type="checkbox"> Imprimer en deux exemplaires une facture /!\ Ne pas oublier les mentions légales<br>
+- Créer une facture (détail plus loin)
+- Modifier une facture
+- Lister les factures
+- Sauvegarder en PDF une facture
+- Imprimer en deux exemplaires une facture ⚠ *****Ne pas oublier les mentions légales*****
 
 
 ##Création d'une facture
 
-<input type="checkbox"> Choisir un client <br>
-<input type="checkbox"> Compléter la liste des tâches (menu déroulant) et le nombre d'heures effectuées<br>
-<input type="checkbox"> Ajouter de nouvelles lignes de tâches si besoin<br>
-<input type="checkbox"> Afficher un montant HT de base pour chaque tâche et modifier le montant si besoin<br>
-<input type="checkbox"> Sauvegarder <br>
+- Choisir un client
+- Compléter la liste des tâches (menu déroulant) et le nombre d'heures effectuées
+- Ajouter de nouvelles lignes de tâches si besoin
+- Afficher un montant HT de base pour chaque tâche et modifier le montant si besoin
+- Sauvegarder
 
 
-
+##TODOS
+- Ajouter le numéro de téléphone sur ClientEntity (& Controller)

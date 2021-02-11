@@ -38,8 +38,13 @@ class ClientController extends AbstractController
         $form = $this->createFormBuilder($client)
             ->add('name')
             ->add('familyName')
-            ->add('Zipcode')
+            ->add('SocialName')
             ->add('VATnumber')
+            ->add('email')
+            ->add('street')
+            ->add('Zipcode')
+            ->add('city')
+            ->add('country')
             ->getForm();
 
         $form->handleRequest($request);

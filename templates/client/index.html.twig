@@ -14,34 +14,36 @@
             <h2>{{ controller_name }}</h2>
         </div>
 
+        <div>
+            <a href="{{ path('newClient') }}" class="to-new-item">Nouveau client</a>
+        </div>
+
         <table>
             <thead>
             <tr>
                 <th class="client_main">Client</th>
                 <th class="client_column">Numéro de TVA</th>
                 <th class="client_column">Commune</th>
+                <th class="client_column"></th>
             </tr>
             </thead>
 
             <tbody>
             {% for client in clients %}
-
                 <tr>
-
-                    <td class="client_main">
+                    <td class="client_main" >
+                            {{ client.name | upper }}
+                    </td>
+                    <td class="client_column">{{ client.VATnumber }}</td>
+                    <td class="client_column">{{ client.city |capitalize }}</td>
+                    <td class="client_column">
                         <a href="{{ path('client', {'id': client.id, }) }}">
-                            {{ client.name |capitalize }}
+                            Modifier
                         </a>
                     </td>
-
-                    <td class="client_column">{{ client.VATnumber |capitalize }}</td>
-                    <td class="client_column">{{ client.city |capitalize }}</td>
                 </tr>
             {%  endfor %}
             </tbody>
         </table>
-
-        <a href="{{ path('newClient') }}"> <p class="to_new">Créer un nouveau client</p></a>
-
     </div>
 {% endblock %}

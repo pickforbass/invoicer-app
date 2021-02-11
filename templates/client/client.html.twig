@@ -9,20 +9,46 @@
             <h2>{{ controller_name }}</h2>
         </div>
 
-        <h3 class="client_name">{{ client.name | upper }}</h3>
+        <div>
+            <span id="modify" class="fake_btn">Modifier</span>
+        </div>
+
+        <h3 class="client_name">{{ client.name | upper }} {{ client.FamilyName | upper }}</h3>
 
         <div class="client_informations">
-            <div class="client_information_name"><h4>Adresse</h4></div>
-            <div class="client_information_content">{{ client.city | capitalize }}</div>
+
+            <div class="client_information_name hidden"><h4>Nom</h4></div>
+            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.FamilyName }}"></div>
+
+            <div class="client_information_name"><h4>Prénom</h4></div>
+            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.name }}"></div>
 
             <div class="client_information_name"><h4>Numéro de TVA</h4></div>
-            <div class="client_information_content">{{ client.VATnumber }}</div>
+            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.SocialName }}"></div>
+
+            <div class="client_information_name"><h4>Numéro de TVA</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.VATnumber }}"></div>
+
+            <div class="client_information_name"><h4>Numéro de TVA</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.VATnumber }}"></div>
 
             <div class="client_information_name"><h4>Mail</h4></div>
-            <div class="client_information_content"></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.email }}"></div>
 
             <div class="client_information_name"><h4>GSM</h4></div>
-            <div class="client_information_content"></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.phone }}"></div>
+
+            <div class="client_information_name"><h4>Adresse</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.street }}"></div>
+
+            <div class="client_information_name"><h4>Code Postal</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.ZipCode }}"></div>
+
+            <div class="client_information_name"><h4>Ville</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.city }}"></div>
+
+            <div class="client_information_name"><h4>Pays</h4></div>
+            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.country }}"></div>
 
             <div class="client_information_name"><h4>Dernières factures</h4></div>
             <div class="client_information_content"></div>
@@ -31,5 +57,12 @@
         </div>
 
     </div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ asset('assets/scripts/client_styling.js') }}">
+
+</script>
+
 {% endblock %}
 
