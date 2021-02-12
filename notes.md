@@ -9,7 +9,7 @@
 
 ##Client
 - Créer un client ✔
-- Voir la fiche, modifier un client, retrouver ses factures
+- Voir la fiche ✔, modifier un client ✔, retrouver ses factures
 - Lister les clients ✔
 
 

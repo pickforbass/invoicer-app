@@ -80,6 +80,7 @@ li {
     display: inline-block;
     width: 8rem;
     padding: 10px;
+    margin-left: 47vw;
     background-color: #2C858D;
     border-radius: 25px;
     box-shadow: inset -10px -10px 5px 0px rgba(0,0,0,0.2);
@@ -199,6 +200,13 @@ input, select {
 
 .client_information_name {
     text-align: right;
+}
+
+input:disabled{
+    background-color: white;
+    color: black;
+    font-size: 110%;
+    border:0;
 }
 
 
