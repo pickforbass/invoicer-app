@@ -90,6 +90,10 @@ li {
     cursor: default;
 }
 
+.fake_btn:active {
+    transform: scale(0.97);
+}
+
 /** Setting navbar **/
 
 #navbar {
@@ -194,9 +198,20 @@ input, select {
 
 .client_information_name, .client_information_content {
     display: inline-block;
-    min-width: 45% ;
+    width: 45% ;
     padding: 0 15px;
 }
+
+input.client_information_content {
+    width: 37%;
+    border: 0;
+    border-radius: 0;
+    border-bottom: lightslategray 1px solid;
+    background-color: #e8eeee;
+    font-size: 101%;
+
+}
+
 
 .client_information_name {
     text-align: right;
@@ -208,6 +223,8 @@ input:disabled{
     font-size: 110%;
     border:0;
 }
+
+
 
 
 /**** Task Vues ****/

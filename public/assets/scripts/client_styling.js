@@ -5,11 +5,10 @@ const hiddens = document.getElementsByClassName('hidden');
 console.log(hiddens);
 
 
-modifyButton.addEventListener('click', function () {
-    inputs.forEach(input => input.removeAttribute('disabled'))
-
-    for (let hidden of hiddens) {
-        hidden.classList.remove('hidden');
-    }
+modifyButton.addEventListener('click',  () => {
+    inputs.forEach(input => input.removeAttribute('disabled'));
+    Array.from(hiddens).forEach(item => {
+       item.classList.remove('hidden');
+    });
 });
 

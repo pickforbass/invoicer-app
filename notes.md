@@ -1,5 +1,3 @@
-
-
 # Cahier des charges V1
 
 ## Tâches
@@ -18,6 +16,7 @@
 - Modifier les données d'un utilisateur
 - Se connecter
 
+
 ##Factures
 - Créer une facture (détail plus loin)
 - Modifier une facture
@@ -27,7 +26,6 @@
 
 
 ##Création d'une facture
-
 - Choisir un client
 - Compléter la liste des tâches (menu déroulant) et le nombre d'heures effectuées
 - Ajouter de nouvelles lignes de tâches si besoin
@@ -36,4 +34,3 @@
 
 
 ##TODOS
-- Ajouter le numéro de téléphone sur ClientEntity (& Controller)
