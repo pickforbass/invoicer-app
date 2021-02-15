@@ -17,42 +17,115 @@
 
         <div class="client_informations">
 
-            <div class="client_information_name hidden"><h4>Nom</h4></div>
-            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.FamilyName }}"></div>
+            {{ form_start(update_form) }}
 
-            <div class="client_information_name"><h4>Prénom</h4></div>
-            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.name }}"></div>
+            <div class="hidden">
+                {{ form_label(update_form.familyName, 'Nom', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.familyName, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.FamilyName
+                }}) }}
+            </div>
+            <div class="hidden">
+                {{ form_label(update_form.name, 'Prénom', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.name, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.name
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.SocialName, 'Raison sociale', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.SocialName , {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.SocialName
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.VATnumber, 'Numéro de TVA', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.VATnumber, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.VATnumber
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.email, 'Email', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.email, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.email
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.phone, 'Téléphone / GSM', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.phone, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.phone
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.street, 'Adresse', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.street, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.street
+                }}) }}
+            </div>
 
-            <div class="client_information_name"><h4>Raison sociale</h4></div>
-            <div class="client_information_content hidden"><input type="text" disabled="true" value="{{ client.SocialName }}"></div>
+            <div>
+                {{ form_label(update_form.Zipcode, 'Code Postal', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.Zipcode, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.Zipcode
+                }}) }}
+            </div>
 
-            <div class="client_information_name"><h4>Numéro de TVA</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.VATnumber }}"></div>
+            <div>
+                {{ form_label(update_form.city, 'Ville', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.city, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.city
+                }}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.country, 'Nom', {
+                    'label_attr': {'class': 'client_information_name'}
+                }) }}
+                {{ form_widget(update_form.country, {'attr':{
+                    'class': 'client_information_content',
+                    'disabled': 'true',
+                    'value': client.country
+                }}) }}
+            </div>
 
-            <div class="client_information_name"><h4>Téléphone</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.phone }}"></div>
+            {{ form_end(update_form) }}
 
-            <div class="client_information_name"><h4>Mail</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.email }}"></div>
 
-            <div class="client_information_name"><h4>GSM</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.phone }}"></div>
-
-            <div class="client_information_name"><h4>Adresse</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.street }}"></div>
-
-            <div class="client_information_name"><h4>Code Postal</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.ZipCode }}"></div>
-
-            <div class="client_information_name"><h4>Ville</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.city }}"></div>
-
-            <div class="client_information_name"><h4>Pays</h4></div>
-            <div class="client_information_content"><input type="text" disabled="true" value="{{ client.country }}"></div>
-
-            <div class="client_information_name"><h4>Dernières factures</h4></div>
-            <div class="client_information_content"></div>
-
+            <div ><h4>Dernières factures</h4></div>
 
         </div>
 

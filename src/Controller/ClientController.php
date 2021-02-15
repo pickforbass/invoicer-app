@@ -40,6 +40,7 @@ class ClientController extends AbstractController
             ->add('familyName')
             ->add('SocialName')
             ->add('VATnumber')
+            ->add('phone')
             ->add('email')
             ->add('street')
             ->add('Zipcode')
@@ -64,17 +65,41 @@ class ClientController extends AbstractController
 
     /**
      * @param $id
+     * @param Request $req
+     * @param EntityManagerInterface $manager
      * @return Response
      * @Route("/client/{id}", name="client")
      */
-        public function client($id): Response
+        public function client($id, Request $req, EntityManagerInterface $manager): Response
         {
             $repo = $this->getDoctrine()->getRepository(Client::class);
             $client = $repo->find($id);
 
+
+            $form = $this->createFormBuilder($client)
+                        ->add('name')
+                        ->add('familyName')
+                        ->add('SocialName')
+                        ->add('VATnumber')
+                        ->add('phone')
+                        ->add('email')
+                        ->add('street')
+                        ->add('Zipcode')
+                        ->add('city')
+                        ->add('country')
+                        ->getForm();
+            $form->handleRequest($req);
+
+            if($form->isSubmitted() && $form->isValid()) {
+                $manager->flush();
+                return $this->redirectToRoute('client', [$id]);
+            }
+
+
             return $this->render('client/client.html.twig', [
                 'controller_name' => 'Fiche Client',
-                'client'=> $client
+                'client'=> $client,
+                'update_form' => $form->createView()
             ]);
         }
 
