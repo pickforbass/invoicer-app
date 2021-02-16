@@ -1,11 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ controller_name }}{% endblock %}
+{% block stylesheets %}
+    <link rel='stylesheet' href="{{ asset('assets/styles/tables.css') }}"
+{% endblock %}
 
 {% block body %}
 
 <div class="example-wrapper">
-    <h1> {{ controller_name }}</h1>
+    <div class="underline">
+        <h2>{{ controller_name }}</h2>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Client</td>
+                <td>Numéro</td>
+                <td>Date</td>
+                <td>Montant</td>
+                <td>Payé</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 
 </div>
 {% endblock %}

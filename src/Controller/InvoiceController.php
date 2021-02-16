@@ -2,12 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Client;
 use App\Entity\Invoice;
+use App\Entity\Task;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Collection;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
 
 class InvoiceController extends AbstractController
 {
@@ -37,20 +43,29 @@ class InvoiceController extends AbstractController
      */
     public function newInvoice(EntityManagerInterface $manager, Request $request): Response
     {
-//        $manager = $this->getDoctrine()->getManager()->getRepository(Invoice::class);
-//        $invoice = new Invoice();
-//            $form = $this->createFormBuilder($invoice)
-//                ->add('client')
-//                ->add('date')
-//                ->add('designation')
-//                ->add('time')
-//                ->add('price')
-//                ->getForm();
-//
 
+        $invoiceNumber = date('Y');
+        $clients = $this->getDoctrine()->getManager()->getRepository(Client::class)->findAll();
+        $tasks = $this->getDoctrine()->getManager()->getRepository(Task::class)->findAll();
+
+        $manager = $this->getDoctrine()->getManager()->getRepository(Invoice::class);
+        $invoice = new Invoice();
+            $form = $this->createFormBuilder($invoice)
+                ->add('Client')
+                ->add('date')
+                ->add('designation', CollectionType::class, [
+                    'entry_type'=> TextType::class,
+                    'entry_options'=> [
+                    'hour'=> TextType::class,
+                    "price"=>TextType::class
+                    ]])
+                ->getForm();
 
         return $this->render('invoice/new.html.twig', [
             'controller_name' => 'Nouvelle facture',
+            'new_invoice'=> $form->createView(),
+            'clients'=> $clients,
+            'tasks'=> $tasks
         ]);
     }
 
