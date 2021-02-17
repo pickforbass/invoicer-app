@@ -5,7 +5,7 @@
 #2C858D
 #74CEB7
 #C9FFD5
-#FFFFCB
+#CAF3EF
  */
 /** Set basic elements & most used elements **/
 html, body {
@@ -19,27 +19,16 @@ html, body {
 header {
     min-height: 11em;
     color:white;
-    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%, rgb(116, 206, 183) 61%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%, rgb(116, 206, 183) 61%, rgb(202, 243, 239) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004056', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
-.example-wrapper {
-    margin: 1em auto;
-    max-width: 800px;
-    width: 95%; font:
-        18px/1.5 sans-serif;
-}
-
-
-.example-wrapper code {
-    background: #F5F5F5;
-    padding: 2px 6px; }
 
 
 h1 {
     margin-top: 0;
     padding : 2em;
 }
+
 
 h2, h3 {
     background-color: white;
@@ -49,7 +38,7 @@ h2, h3 {
 
 .underline {
     height: 2.4em;
-    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(87deg, rgb(0, 64, 86) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%, rgb(202, 243, 239) 100%);
     margin-bottom: 1.5em;
     border-radius: 3px;
 }
@@ -66,35 +55,25 @@ li {
     list-style-type: none;
 }
 
-.to-new-item {
-    display: block;
-    padding: 0.1em 2em;
-    text-align: right;
+
+.example-wrapper {
+    margin: 1em auto;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+    padding: 2px 6px;
 }
 
 .hidden {
     display: none !important;
 }
 
-.fake_btn {
-    display: inline-block;
-    width: 8rem;
-    padding: 10px;
-    margin-left: 47vw;
-    background-color: #2C858D;
-    border-radius: 25px;
-    box-shadow: inset -10px -10px 5px 0px rgba(0,0,0,0.2);
-    color: snow;
-    font-weight: bold;
-    text-align: center;
-    cursor: default;
+
+.flex_inline {
+    display: flex;
+    margin-bottom: 1em;
 }
 
-.fake_btn:active {
-    transform: scale(0.97);
-}
-
-/** Setting navbar **/
+/****** Setting navbar ******/
 
 #navbar {
     padding-top: 4rem;
@@ -119,12 +98,12 @@ li {
 
 #container {
     display: inline-block;
-    width : 60em;
+    width : 83em;
     margin-left: 2em;
 }
 
 
-/* Dashboard elements */
+/****** Dashboard elements ******/
 
 .flex-container {
     display: flex;
@@ -155,29 +134,63 @@ li {
 }
 
 
-/**** Form styling *****/
+/******* Form styling *********/
 
 .form-group {
     margin: 1rem;
 }
+
 
 .form-group label {
     display: inline-block;
     width: 11rem;
 }
 
-input, select {
-    border: gray 1px solid;
-    border-radius: 5px;
-    display: inline-block;
-    min-height: 20px;
-    margin: 5px;
 
+.label_to_right {
+    text-align: right;
 }
+
+.big_input {
+    width: 59rem;
+}
+
+
+.fake_btn {
+    display: inline-block;
+    width: 8rem;
+    padding: 10px;
+    margin-left: 47vw;
+    background-color: #2C858D;
+    border-radius: 25px;
+    box-shadow: inset -10px -10px 5px 0px rgba(0,0,0,0.2);
+    color: snow;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+}
+
+
+.fake_btn:active {
+    transform: scale(0.97);
+}
+
 
 .designation-name {
     min-width: 23rem;
 }
+
+input, select {
+    border: 0;
+    border-bottom: #296f7b 1px solid;
+    display: inline-block;
+    min-height: 25px;
+    margin: 5px;
+    background-color: #CAF3EF;
+    min-width: 25%;
+    padding: 3px 15px;
+}
+
 
 
 /*****  INVOICES PARTS *****/
@@ -186,6 +199,19 @@ input, select {
 
 .invoice_field {
     min-width: 247px;
+}
+
+
+#form_date {
+    display: inline-block;
+}
+
+#js_add_line {
+    font-size: 130%;
+    font-weight: bold;
+    margin: 0;
+    width: 2rem;
+
 }
 
 
@@ -234,3 +260,5 @@ label>span {
     display: inline-block;
     min-width: 6em;
 }
+
+
