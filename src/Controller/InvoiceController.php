@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\Selectable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -53,7 +54,9 @@ class InvoiceController extends AbstractController
             ->add('Client', EntityType::class, [
                 'class' => Client::class,
             ])
-            ->add('date')
+            ->add('date', DateType::class, [
+                'format' => 'dd-MMMM-yyyy'
+            ])
             ->add('designation', DesignationInvoiceMakerType::class, [
                 'entry_type'=> TextType::class,
             ])

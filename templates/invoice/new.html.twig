@@ -13,10 +13,16 @@
         </div>
 
         {{ form_start(new_invoice) }}
-        <div class="flex_inline">
-            {{ form_row(new_invoice.Client) }}
-            {{ form_row(new_invoice.date) }}
-        </div>
+            <div class="form-group">
+                {{ form_label(new_invoice.Client,'Client', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_invoice.Client) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(new_invoice.date,'Date', { 'label_attr': {'class': 'label_to_right' }}) }}
+                {{ form_widget(new_invoice.date) }}
+            </div>
+
 
         <table>
             <thead>
@@ -28,12 +34,12 @@
                 </tr>
             </thead>
             <tbody id='table-body'>
-                 <tr>
-                    <td>{{ form_widget(new_invoice.designation.designation) }}</td>
-                    <td>{{ form_widget(new_invoice.designation.hour) }}</td>
-                    <td><input type="number"></td>
-                    <td>{{ form_widget(new_invoice.designation.price) }}</td>
-                </tr>
+{#                 <tr>#}
+{#                    <td>{{ form_widget(new_invoice.designation.designation) }}</td>#}
+{#                    <td>{{ form_widget(new_invoice.designation.hour) }}</td>#}
+{#                    <td><input type="number"></td>#}
+{#                    <td>{{ form_widget(new_invoice.designation.price) }}</td>#}
+{#                </tr>#}
             </tbody>
         </table>
 
@@ -43,6 +49,8 @@
 
         <button type="submit" class="fake_btn">Nouvelle facture</button>
         {{ form_end(new_invoice) }}
+
+
 
     </div>
 {% endblock %}

@@ -21,7 +21,12 @@ tbody tr td {
 
 
 tbody tr:nth-child(odd) {
-    background-color: #74ceb7;
+    background-color: #CAF3EF;
+}
+
+table input {
+    background-color: white;
+    border: 0;
 }
 
 

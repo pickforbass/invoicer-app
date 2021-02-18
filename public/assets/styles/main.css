@@ -73,6 +73,7 @@ li {
     margin-bottom: 1em;
 }
 
+
 /****** Setting navbar ******/
 
 #navbar {
@@ -98,7 +99,7 @@ li {
 
 #container {
     display: inline-block;
-    width : 83em;
+    min-width : 61em;
     margin-left: 2em;
 }
 
@@ -187,11 +188,14 @@ input, select {
     min-height: 25px;
     margin: 5px;
     background-color: #CAF3EF;
-    min-width: 25%;
+    min-width: 19%;
     padding: 3px 15px;
 }
 
 
+input:focus, select:focus {
+    outline: 1px solid #CAF3EF;
+}
 
 /*****  INVOICES PARTS *****/
 
@@ -209,7 +213,7 @@ input, select {
 #js_add_line {
     font-size: 130%;
     font-weight: bold;
-    margin: 0;
+    margin: 0 auto;
     width: 2rem;
 
 }
