@@ -5,14 +5,12 @@ namespace App\Controller;
 use App\Entity\Client;
 use App\Entity\Invoice;
 use App\Entity\Task;
-use App\Form\DesignationInvoiceMakerType;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Selectable;
+use App\Form\NewDesignationType;
+use App\Form\NewInvoiceType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,17 +48,7 @@ class InvoiceController extends AbstractController
         $manager = $this->getDoctrine()->getManager();
 
         $invoice = new Invoice();
-        $form = $this->createFormBuilder($invoice)
-            ->add('Client', EntityType::class, [
-                'class' => Client::class,
-            ])
-            ->add('date', DateType::class, [
-                'format' => 'dd-MMMM-yyyy'
-            ])
-            ->add('designation', DesignationInvoiceMakerType::class, [
-                'entry_type'=> TextType::class,
-            ])
-            ->getForm();
+        $form = $this->createForm(NewInvoiceType::class, $invoice);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){

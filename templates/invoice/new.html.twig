@@ -24,24 +24,28 @@
             </div>
 
 
-        <table>
+        {#<table>
             <thead>
                 <tr>
-                    <td>{{form_label(new_invoice.designation)}}</td>
-                    <td>{{ form_label(new_invoice.designation.hour, 'Heures') }}</td>
-                    <td>€/h</td>
-                    <td>{{ form_label(new_invoice.designation.price, 'Montant HT') }}</td>
+#}{#                    <td>{{form_label(new_invoice.designation)}}</td>#}{#
+#}{#                    <td>{{ form_label(new_invoice.designation.hour, 'Heures') }}</td>#}{#
+#}{#                    <td>€/h</td>#}{#
+#}{#                    <td>{{ form_label(new_invoice.designation.price, 'Montant HT') }}</td>#}{#
                 </tr>
             </thead>
             <tbody id='table-body'>
-{#                 <tr>#}
-{#                    <td>{{ form_widget(new_invoice.designation.designation) }}</td>#}
-{#                    <td>{{ form_widget(new_invoice.designation.hour) }}</td>#}
-{#                    <td><input type="number"></td>#}
-{#                    <td>{{ form_widget(new_invoice.designation.price) }}</td>#}
-{#                </tr>#}
+            <tr></tr>
+                 <tr class="tags" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr')}}>
+                    <td>{{ form_widget(new_invoice.designation.designation) }}</td>
+                    <td>{{ form_widget(new_invoice.designation.hour) }}</td>
+                    <td><input type="number"></td>
+                    <td>{{ form_widget(new_invoice.designation.price) }}</td>
+                </tr>
             </tbody>
-        </table>
+        </table>#}
+        {{ dump(new_invoice.designation.vars.prototype) }}
+        {{ form_widget(new_invoice.designation.vars.prototype) }}
+        {# <ul class="tags" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}"></ul>#}
 
         <div class="flex_inline">
             <span class="fake_btn" id="js_add_line">+</span>
