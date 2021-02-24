@@ -20,7 +20,6 @@ class NewInvoiceType extends AbstractType
                 'entry_type' => NewDesignationType::class,
                 'entry_options' => ['label' => 'false'],
                 'allow_add' => true,
-                //'prototype' => true,
             ])
 
             ->add('Client', EntityType::class, [

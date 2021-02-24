@@ -1,3 +1,269 @@
-body {
-    background-color: lightgray;
+
+@import "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap";
+
+/*
+#004056
+#2C858D
+#74CEB7
+#C9FFD5
+#CAF3EF
+ */
+/** Set basic elements & most used elements **/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 80vh;
 }
+
+
+header {
+    min-height: 11em;
+    color:white;
+    background: linear-gradient(87deg, rgba(0,64,86,1) 0%, rgb(44, 133, 141) 38%, rgb(116, 206, 183) 61%, rgb(202, 243, 239) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004056', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+h1 {
+    margin-top: 0;
+    padding : 2em;
+}
+
+
+h2, h3 {
+    background-color: white;
+    height: 1.5em;
+}
+
+
+.underline {
+    height: 2.4em;
+    background: linear-gradient(87deg, rgb(0, 64, 86) 0%, rgb(44, 133, 141) 38%,rgba(116,206,183,1) 61%, rgb(202, 243, 239) 100%);
+    margin-bottom: 1.5em;
+    border-radius: 3px;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+
+.example-wrapper {
+    margin: 1em auto;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+    padding: 2px 6px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.flex_inline {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+
+/****** Setting navbar ******/
+
+#navbar {
+    padding-top: 4rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 15em;
+    box-shadow: 3px 0px 10px -1px rgba(0,0,0,0.75);
+    min-height: 80em;
+}
+
+
+#main-menu li {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.main-menu-content {
+    margin-left: 7px;
+    align-self: center;
+}
+
+
+#container {
+    display: inline-block;
+    min-width : 61em;
+    margin-left: 2em;
+}
+
+
+/****** Dashboard elements ******/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.flex-container a {
+    width: 33%;
+}
+
+
+.flex-container a:active {
+    transform: scale(0.9);
+    transition-duration: 200ms;
+}
+
+
+.dashboard-card {
+    min-height: 60px;
+    margin: 5%;
+    padding: 5px 10px;
+    background: linear-gradient(to right, rgba(0,64,86,.8) 1%,rgba(0,0,0,0) 100%);
+    color: white;
+    font-weight: bolder;
+    border-radius: 8px;
+    box-shadow: 0 10px 18px -10px rgba(0,0,0,0.75);
+}
+
+
+/******* Form styling *********/
+
+.form-group {
+    margin: 1rem;
+}
+
+
+.form-group label {
+    display: inline-block;
+    width: 11rem;
+}
+
+
+.label_to_right {
+    text-align: right;
+}
+
+.big_input {
+    width: 59rem;
+}
+
+
+.fake_btn {
+    display: inline-block;
+    width: 8rem;
+    padding: 10px;
+    margin-left: 47vw;
+    background-color: #2C858D;
+    border-radius: 25px;
+    box-shadow: inset -10px -10px 5px 0px rgba(0,0,0,0.2);
+    color: snow;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+}
+
+
+.fake_btn:active {
+    transform: scale(0.97);
+}
+
+
+.designation-name {
+    min-width: 23rem;
+}
+
+input, select {
+    border: 0;
+    border-bottom: #296f7b 1px solid;
+    display: inline-block;
+    min-height: 25px;
+    margin: 5px;
+    background-color: #CAF3EF;
+    min-width: 19%;
+    padding: 3px 15px;
+}
+
+
+input:focus, select:focus {
+    outline: 1px solid #CAF3EF;
+}
+
+/*****  INVOICES PARTS *****/
+
+/* NEW INVOICE ELEMENTS (including form) */
+
+.invoice_field {
+    min-width: 247px;
+}
+
+
+#form_date {
+    display: inline-block;
+}
+
+#js_add_line {
+    font-size: 130%;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 2rem;
+
+}
+
+
+/***** CLIENTS DETAILS *****/
+
+.client_name {
+    text-align: center;
+    font-size: 125%;
+}
+
+.client_information_name, .client_information_content {
+    display: inline-block;
+    width: 45% ;
+    padding: 0 15px;
+}
+
+input.client_information_content {
+    width: 37%;
+    border: 0;
+    border-radius: 0;
+    border-bottom: lightslategray 1px solid;
+    background-color: #e8eeee;
+    font-size: 101%;
+
+}
+
+
+.client_information_name {
+    text-align: right;
+}
+
+input:disabled{
+    background-color: white;
+    color: black;
+    font-size: 110%;
+    border:0;
+}
+
+
+
+
+/**** Task Vues ****/
+
+/** for editing tasks**/
+label>span {
+    display: inline-block;
+    min-width: 6em;
+}
+
+

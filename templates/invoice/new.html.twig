@@ -2,7 +2,7 @@
 
 {% block title %}Nouvelle facture{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href={{ asset('assets/styles/tables.css') }}>
+    {{ encore_entry_link_tags('tables') }}
 {% endblock %}
 
 {% block body %}
@@ -24,41 +24,38 @@
             </div>
 
 
-        {#<table>
+        <table>
             <thead>
                 <tr>
-#}{#                    <td>{{form_label(new_invoice.designation)}}</td>#}{#
-#}{#                    <td>{{ form_label(new_invoice.designation.hour, 'Heures') }}</td>#}{#
-#}{#                    <td>€/h</td>#}{#
-#}{#                    <td>{{ form_label(new_invoice.designation.price, 'Montant HT') }}</td>#}{#
+                    <td>Désignation</td>
+                    <td>Heures</td>
+                    <td>€/h</td>
+                    <td>Montant Hors Taxe</td>
                 </tr>
             </thead>
+
             <tbody id='table-body'>
-            <tr></tr>
-                 <tr class="tags" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr')}}>
-                    <td>{{ form_widget(new_invoice.designation.designation) }}</td>
-                    <td>{{ form_widget(new_invoice.designation.hour) }}</td>
-                    <td><input type="number"></td>
-                    <td>{{ form_widget(new_invoice.designation.price) }}</td>
+                 <tr>
+{#                     <td><input type="text" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype.designation)|e('html_attr') }}"></td>#}
+{#                     <td><input type="text"></td>#}
+{#                     <td><input type="text"></td>#}
+{#                     <td><input type="text" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype.price)|e('html_attr') }}"></td>#}
                 </tr>
             </tbody>
-        </table>#}
-        {{ dump(new_invoice.designation.vars.prototype) }}
-        {{ form_widget(new_invoice.designation.vars.prototype) }}
-        {# <ul class="tags" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}"></ul>#}
+        </table>
+        <ul class="rows" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}"></ul>
+{#        {{ form_widget(new_invoice.designation.vars.prototype.price) }}#}
 
         <div class="flex_inline">
-            <span class="fake_btn" id="js_add_line">+</span>
+            <span class="fake_btn" id="add-row" data-collection-holder-class="rows">+</span>
         </div>
 
         <button type="submit" class="fake_btn">Nouvelle facture</button>
         {{ form_end(new_invoice) }}
 
-
-
     </div>
 {% endblock %}
 
 {% block script %}
-    <script src="{{ asset('assets/scripts/client_styling.js') }}"></script>
+{{ encore_entry_script_tags('invoice') }}
 {% endblock %}

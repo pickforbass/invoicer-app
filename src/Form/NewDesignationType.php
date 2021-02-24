@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Designation;
+use App\Entity\Task;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,7 +14,9 @@ class NewDesignationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('designation')
+            ->add('designation', EntityType::class, [
+                'class' => Task::class,
+            ])
             ->add('price')
             ->add('invoice')
         ;

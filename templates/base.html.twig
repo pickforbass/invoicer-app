@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ asset('assets/styles/main.css') }}">
+    {{ encore_entry_link_tags('app')}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>{% block title %}Facturier{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
