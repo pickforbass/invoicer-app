@@ -51,7 +51,7 @@ class InvoiceController extends AbstractController
         $form = $this->createForm(NewInvoiceType::class, $invoice);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted()){
             $manager->persist($invoice);
             $manager->flush();
         }

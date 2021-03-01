@@ -30,6 +30,7 @@ class NewInvoiceType extends AbstractType
             ])
             ->add('paid')
         ;
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

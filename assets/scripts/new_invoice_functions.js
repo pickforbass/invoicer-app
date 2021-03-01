@@ -1,23 +1,76 @@
-jQuery(document).ready(function() {
-    var $tagsCollectionHolder = $('ul.rows');
+const tableBody = document.getElementById('table-body');
+const addRow = document.getElementById('add-row');
+let rows = tableBody.getElementsByTagName('tr');
+let index = rows.length;
+let designations = document.getElementsByClassName('designation-name');
+let prices = document.getElementsByClassName('designation-price');
+let prototype;
 
-    $tagsCollectionHolder.data('index', $tagsCollectionHolder.find('input').length);
+index === 0 ? index = 1 : index = rows.length;
 
-    $('body').on('click', '#add-row', function(e) {
-        var $collectionHolderCLass = $(e.currentTarget).data('collectionHolderClass');
-        addFormToCollection($collectionHolderCLass);
-    })
-});
+function newRow(){
 
-function addFormToCollection($collectionHolderClass) {
-    var $collectionHolder = $('.' + $collectionHolderClass);
-    var prototype = $collectionHolder.data('prototype');
-    var index = $collectionHolder.data('index');
-    var newForm = prototype;
+    //Get Prototype
+    prototype = tableBody.dataset.prototype;
 
-    newForm = newForm.replace(/__name__/g, index);
-    $collectionHolder.data('index', index + 1);
+    // Changing div to tr
+    prototype = prototype.replace('<div', '<tr');
+    let strReverse = prototype.split('').reverse().join('');
+    strReverse = strReverse.replace('>vid', '>rt');
+    prototype = strReverse.split('').reverse().join('');
 
-    var $newTr = $('<tr></tr>').append(newForm);
-    $collectionHolder.append($newTr)
+    labelEraser(prototype);
+
+    divToTd(prototype);
+
+    putIndex(prototype);
+
+    insertTd(prototype);
+
+    tableBody.innerHTML += prototype;
+
 }
+
+
+function labelEraser(sentence) {
+    let label = "<label";
+    let endLabel = "</label>";
+
+    if (sentence.includes(label) || sentence.includes(endLabel)) {
+        let start = sentence.indexOf(label);
+        let end = sentence.indexOf(endLabel);
+
+        let toDelete = sentence.slice(start, end + endLabel.length);
+
+        let newSentence = sentence.replace(toDelete, '');
+        prototype = newSentence;
+        labelEraser(newSentence);
+    }
+}
+
+function divToTd(sentence){
+    sentence = sentence.replaceAll('<div>','<td>');
+    prototype = sentence;
+
+}
+
+function putIndex(sentence){
+
+    prototype = sentence.replaceAll('__name__',index);
+    index++;
+}
+
+function insertTd(sentence){
+    let hourTd = document.createElement('td');
+    let feeTd = document.createElement('td');
+    let hourInput = document.createElement('input');
+    let feeInput = document.createElement('input');
+
+    hourTd.append(hourInput);
+    feeTd.append(feeInput);
+}
+
+newRow();
+
+addRow.addEventListener("click", newRow);
+

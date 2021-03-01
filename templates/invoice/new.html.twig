@@ -34,20 +34,12 @@
                 </tr>
             </thead>
 
-            <tbody id='table-body'>
-                 <tr>
-{#                     <td><input type="text" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype.designation)|e('html_attr') }}"></td>#}
-{#                     <td><input type="text"></td>#}
-{#                     <td><input type="text"></td>#}
-{#                     <td><input type="text" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype.price)|e('html_attr') }}"></td>#}
-                </tr>
+            <tbody id='table-body' data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}">
             </tbody>
         </table>
-        <ul class="rows" data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}"></ul>
-{#        {{ form_widget(new_invoice.designation.vars.prototype.price) }}#}
 
         <div class="flex_inline">
-            <span class="fake_btn" id="add-row" data-collection-holder-class="rows">+</span>
+            <span class="fake_btn" id="add-row" data-collection-holder-designation="designation" data-collection-holder-price="price">+</span>
         </div>
 
         <button type="submit" class="fake_btn">Nouvelle facture</button>
