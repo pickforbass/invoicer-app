@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,6 +48,8 @@ class InvoiceController extends AbstractController
     {
         $manager = $this->getDoctrine()->getManager();
 
+        $tasks = $manager->getRepository(Task::class)->findAll();
+
         $invoice = new Invoice();
         $form = $this->createForm(NewInvoiceType::class, $invoice);
         $form->handleRequest($request);
@@ -59,7 +62,7 @@ class InvoiceController extends AbstractController
         return $this->render('invoice/new.html.twig', [
             'controller_name' => 'Nouvelle facture',
             'new_invoice'=> $form->createView(),
-            'tasks'=> $manager->getRepository(Task::class)->findAll(),
+            'tasks'=> new JsonResponse($tasks),
         ]);
     }
 

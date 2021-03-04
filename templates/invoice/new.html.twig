@@ -34,15 +34,21 @@
                 </tr>
             </thead>
 
-            <tbody id='table-body' data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}">
+            <tbody id='table-body'
+                   data-prototype="{{ form_widget(new_invoice.designation.vars.prototype)|e('html_attr') }}">
             </tbody>
         </table>
 
         <div class="flex_inline">
-            <span class="fake_btn" id="add-row" data-collection-holder-designation="designation" data-collection-holder-price="price">+</span>
+            <span class="fake_btn" id="add-row"
+                  data-collection-holder-designation="designation"
+                  data-collection-holder-price="price">+</span>
         </div>
 
-        <button type="submit" class="fake_btn">Nouvelle facture</button>
+        <button type="submit"
+                class="fake_btn">
+            Nouvelle facture
+        </button>
         {{ form_end(new_invoice) }}
 
     </div>

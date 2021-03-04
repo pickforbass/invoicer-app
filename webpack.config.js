@@ -21,7 +21,8 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('invoice', './assets/scripts/new_invoice_functions.js')
+    .addEntry('invoice', ['./assets/scripts/invoice_scripts/invoice_new_row.js', './assets/scripts/invoice_scripts/autocomplete_fees.js'])
+    // .addEntry('invoice', './assets/scripts/invoice_scripts/autocomplete_fees.js')
     .addEntry('tables', './assets/styles/tables.css')
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

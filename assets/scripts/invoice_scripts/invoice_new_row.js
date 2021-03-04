@@ -21,11 +21,11 @@ function newRow(){
 
     labelEraser(prototype);
 
-    divToTd(prototype);
+    prototype = divToTd(prototype);
 
-    putIndex(prototype);
+    prototype = insertMoreTd(prototype);
 
-    insertTd(prototype);
+    prototype = putIndex(prototype);
 
     tableBody.innerHTML += prototype;
 
@@ -50,27 +50,34 @@ function labelEraser(sentence) {
 
 function divToTd(sentence){
     sentence = sentence.replaceAll('<div>','<td>');
-    prototype = sentence;
-
+    return sentence.replaceAll('</div>','</td>');
 }
 
 function putIndex(sentence){
-
-    prototype = sentence.replaceAll('__name__',index);
+    sentence = sentence.replaceAll('__name__',index);
     index++;
+    return sentence;
 }
 
-function insertTd(sentence){
+function insertMoreTd(sentence){
     let hourTd = document.createElement('td');
     let feeTd = document.createElement('td');
     let hourInput = document.createElement('input');
     let feeInput = document.createElement('input');
 
+    hourInput.setAttribute('data-hour', 'hour___name__');
+    hourInput.setAttribute('id', 'designation_hour___name__');
+    feeInput.setAttribute('data-hour', 'fee___name__');
+    feeInput.setAttribute('id', 'designation_fee___name__');
+
     hourTd.append(hourInput);
     feeTd.append(feeInput);
+
+
+    let start = sentence.indexOf('</td>')+'</td>'.length;
+    return sentence.slice(0, start)+hourTd.outerHTML+feeTd.outerHTML+sentence.slice(start, sentence.length);
 }
 
 newRow();
 
 addRow.addEventListener("click", newRow);
-
