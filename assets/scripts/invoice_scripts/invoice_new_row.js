@@ -1,10 +1,27 @@
-// const tableBody = document.getElementById('table-body');
-// const addRow = document.getElementById('add-row');
-// let rows = tableBody.getElementsByTagName('tr');
-// let index = rows.length;
-// let designations = document.getElementsByClassName('designation-name');
-// let prices = document.getElementsByClassName('designation-price');
-// let prototype;
+const tableBody = document.getElementById('table-body');
+let firstRow = document.getElementById("new_invoice_designation___name__");
+const prototype = firstRow.outerHTML;
+const addRow = document.getElementById('add-row');
+let index = tableBody.rows.length;
+
+
+//Set new data-prototype by the first tr
+tableBody.setAttribute('data-prototype',prototype);
+
+// changing all __name__ into index number
+
+function putIndex(tr){
+
+    let content = tr.outerHTML.replaceAll('__name__', index.toString());
+    return tr.outerHTML = content;
+
+}
+
+putIndex(firstRow);
+
+
+
+
 //
 // index === 0 ? index = 1 : index = rows.length;
 //
@@ -53,11 +70,6 @@
 //     return sentence.replaceAll('</div>','</td>');
 // }
 //
-// function putIndex(sentence){
-//     sentence = sentence.replaceAll('__name__',index);
-//     index++;
-//     return sentence;
-// }
 //
 // function insertMoreTd(sentence){
 //     let hourTd = document.createElement('td');
@@ -93,3 +105,4 @@
 //     let option = $(this).find(':selected');
 //     console.log(option);
 // })
+

@@ -35,7 +35,7 @@
                     <td>Montant Hors Taxe</td>
                 </tr>
             </thead>
-            <tbody id="{{ new_invoice.designation.vars.id }}"
+            <tbody id="table-body"
                    data-prototype = "{{ form_row(new_invoice.designation.vars.prototype)|e('html_attr') }}">
 
             {% form_theme new_invoice.designation _self %}
