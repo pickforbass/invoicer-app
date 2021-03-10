@@ -19,10 +19,8 @@ class NewDesignationType extends AbstractType
         $builder
             ->add('designation', EntityType::class, [
                 'class' => Task::class,
-                'choice_attr' => ChoiceList::attr($this, function (Task $task) {
-                    return $task ? ['data-hour' => $task->getFee()] : [];
-                }),
-                    ])
+                'choice_value' => 'fee',
+                ])
                 ->add('price')
             ->add('invoice', HiddenType::class)
         ;

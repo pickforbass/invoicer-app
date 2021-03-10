@@ -1,2 +1,3 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    form_themes: ['forms/designation_row.html.twig']
