@@ -1,0 +1,47 @@
+{% block form_row %}
+    <tr id="{{ form.vars.id }}" name="{{ form.vars.full_name }}">
+        {% for child in form.children %}
+            {{ dump(child) }}
+            {% if child.vars.choices is defined %}
+                {% block select_widget %}
+                    <td>
+                        <select name="{{ child.vars.full_name}}"
+                                id="{{ child.vars.id }}">
+                            {% for option in child.vars.choices %}
+                                <option value="{{ option.value }}">{{ option.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                {% endblock %}
+            {% endif %}
+
+            <td>
+                <input type="text">
+            </td>
+
+            <td>
+                <input type="text">
+            </td>
+
+            {% if child.vars.name == 'price' %}
+
+                    {% block integer_widget %}
+                        <td>
+                            <input type="number"
+                                   name="{{ child.vars.full_name}}"
+                                   id="{{ child.vars.id }}">
+                        </td>
+                    {% endblock %}
+
+            {% endif %}
+
+        {%  endfor %}
+
+    </tr>
+{% endblock %}
+
+
+
+
+
+

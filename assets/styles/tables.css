@@ -25,7 +25,6 @@ tbody tr:nth-child(odd) {
 }
 
 table input {
-    background-color: white;
     border: 0;
 }
 

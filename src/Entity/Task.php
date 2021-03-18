@@ -20,7 +20,7 @@ class Task
     /**
      * @ORM\Column(type="string", length=150)
      */
-    private $Name;
+    private $name;
 
     /**
      * @ORM\Column(type="integer")
@@ -34,12 +34,12 @@ class Task
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
@@ -54,5 +54,10 @@ class Task
         $this->fee = $fee;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getName();
     }
 }

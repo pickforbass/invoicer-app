@@ -3,64 +3,93 @@
 {% block title %}Nouveau client{% endblock %}
 
 {% block body %}
-    <div class="underline">
-        <h2>{{ controller_name }}</h2>
+    <div class="example-wrapper">
+        <div class="underline">
+            <h2>{{ controller_name }}</h2>
+        </div>
+
+        {{ form_start(new_client_form, {attr: {
+            'class' : 'example-wrapper',
+        }}) }}
+
+        <div class="underline">
+            <h3>Identité</h3>
+        </div>
+
+        <div class="flex_inline">
+
+            <div>
+                <div class="form-group">
+                    {{ form_label(new_client_form.familyName, 'Nom', { 'label_attr': {'class': 'label_to_right'}}) }}
+                    {{ form_widget(new_client_form.familyName) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(new_client_form.name, 'Prénom', { 'label_attr': {'class': 'label_to_right'}}) }}
+                    {{ form_widget(new_client_form.name) }}
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    {{ form_label(new_client_form.SocialName, 'Raison Sociale', { 'label_attr': {'class': 'label_to_right'}}) }}
+                    {{ form_widget(new_client_form.SocialName) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(new_client_form.VATnumber, 'Numéro de TVA', { 'label_attr': {'class': 'label_to_right'}}) }}
+                    {{ form_widget(new_client_form.VATnumber) }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="underline">
+            <h3>Contact</h3>
+        </div>
+
+        <div class="flex_inline">
+            <div class="form-group">
+                {{ form_label(new_client_form.phone, 'GSM - Téléphone', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_client_form.phone) }}
+            </div>
+
+            <div class="form-group">
+
+                {{ form_label(new_client_form.email, 'E-mail', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_client_form.email) }}
+            </div>
+        </div>
+
+        <div class="underline">
+            <h3>Adresse</h3>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(new_client_form.street, 'Adresse', { 'label_attr': {'class': 'label_to_right'}}) }}
+            {{ form_widget(new_client_form.street, { 'attr': {'class': 'big_input'}}) }}
+        </div>
+
+        <div class="flex_inline">
+            <div class="form-group">
+                {{ form_label(new_client_form.Zipcode, 'Code postal', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_client_form.Zipcode) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(new_client_form.city, 'Ville', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_client_form.city) }}
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            {{ form_label(new_client_form.country, 'Pays', { 'label_attr': {'class': 'label_to_right'}}) }}
+            {{ form_widget(new_client_form.country) }}
+        </div>
+
+        <button type="submit" class="fake_btn">Ajouter</button>
+
+        {{ form_end(new_client_form) }}
     </div>
-
-    {{ form_start(new_client_form) }}
-
-    <div class="form-group">
-        <label for="">Nom </label>
-        {{ form_widget(new_client_form.familyName) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Prénom </label>
-        {{ form_widget(new_client_form.name) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Raison Sociale</label>
-        {{ form_widget(new_client_form.SocialName) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">GSM - Téléphone</label>
-        {{ form_widget(new_client_form.phone) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">E-mail</label>
-        {{ form_widget(new_client_form.email) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Numéro de TVA </label>
-        {{ form_widget(new_client_form.VATnumber) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Adresse</label>
-        {{ form_widget(new_client_form.street) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Code postal</label>
-        {{ form_widget(new_client_form.Zipcode) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Ville</label>
-        {{ form_widget(new_client_form.city) }}
-    </div>
-
-    <div class="form-group">
-        <label for="">Pays</label>
-        {{ form_widget(new_client_form.country) }}
-    </div>
-
-    <button type="submit">Ajouter</button>
-
-    {{ form_end(new_client_form) }}
-
 {% endblock %}

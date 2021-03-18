@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Nouvelle facture{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('tables') }}
+{% endblock %}
 
 {% block body %}
 
@@ -9,11 +12,76 @@
             <h2>{{ controller_name }}</h2>
         </div>
 
-        {{ form_start(new_invoice) }}
-        {{ form_widget('designation') }}
+        {% form_theme new_invoice 'form_div_layout.html.twig' %}
 
-        <button type="submit" class="fake_btn">Nouvelle facture</button>
-        {{ form_end(new_invoice) }}
+
+        {{ form_start(new_invoice) }}
+            <div class="form-group">
+                {{ form_label(new_invoice.Client,'Client', { 'label_attr': {'class': 'label_to_right'}}) }}
+                {{ form_widget(new_invoice.Client) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(new_invoice.date,'Date', { 'label_attr': {'class': 'label_to_right' }}) }}
+                {{ form_widget(new_invoice.date) }}
+            </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Désignation</td>
+                    <td>Heures</td>
+                    <td>€/h</td>
+                    <td>Montant Hors Taxe</td>
+                </tr>
+            </thead>
+            <tbody id="table-body"
+                   data-prototype = "{{ form_row(new_invoice.designations.vars.prototype)|e('html_attr') }}">
+
+            {% form_theme new_invoice.designations  _self %}
+
+            <tr id = '{{ new_invoice.designations.vars.prototype.vars.id }}'>
+
+            {% block new_invoice_designations_vars_designation_widget %}
+                <td>
+                    <select name="{{ new_invoice.designations.vars.prototype.designation.vars.full_name}}"
+                            id="{{ new_invoice.designations.vars.prototype.designation.vars.id }}">
+                        {% for choice in new_invoice.designations.vars.prototype.designation.vars.choices %}
+                        <option value="{{ choice.data.fee }}">{{ choice.label }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            {% endblock %}
+
+                <td><input type="text"></td>
+                <td><input type="text"
+                           id="new_invoice_designations___name___fee">
+                </td>
+                <td>
+                    <input type="text"
+                           name="{{ new_invoice.designations.vars.prototype.price.vars.full_name}}"
+                           id="{{ new_invoice.designations.vars.prototype.price.vars.id }}">
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="flex_inline">
+            <span class="fake_btn" id="add-row"
+                  data-collection-holder-designation="designation"
+                  data-collection-holder-price="price">+</span>
+        </div>
+
+        <button type="submit"
+                class="fake_btn">
+            Nouvelle facture
+        </button>
+        {{ form_end(new_invoice, {'render_rest': false}) }}
 
     </div>
+{% endblock %}
+
+{% block script %}
+{{ encore_entry_script_tags('invoice') }}
 {% endblock %}
