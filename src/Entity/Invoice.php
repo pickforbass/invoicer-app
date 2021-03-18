@@ -40,7 +40,7 @@ class Invoice
     private $date;
 
     /**
-     * @ORM\OneToMany(targetEntity=Designation::class, mappedBy="invoice")
+     * @ORM\OneToMany(targetEntity=Designation::class, mappedBy="invoice", cascade={"persist"} )
      */
     private $designations;
 

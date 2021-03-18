@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\DesignationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * @ORM\Entity(repositoryClass=DesignationRepository::class)
@@ -72,5 +73,13 @@ class Designation
         $this->invoice = $invoice;
 
         return $this;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function __toString(): string
+    {
+        return $this->getDesignation();
     }
 }

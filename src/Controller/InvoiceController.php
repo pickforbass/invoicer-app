@@ -7,6 +7,7 @@ use App\Entity\Invoice;
 use App\Entity\Task;
 use App\Form\NewDesignationType;
 use App\Form\NewInvoiceType;
+use Container2RuAs02\getNewInvoiceTypeService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -18,6 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Form\FormTypeInterface;
+
 
 class InvoiceController extends AbstractController
 {
@@ -62,7 +64,7 @@ class InvoiceController extends AbstractController
         return $this->render('invoice/new.html.twig', [
             'controller_name' => 'Nouvelle facture',
             'new_invoice'=> $form->createView(),
-            'tasks'=> new JsonResponse($tasks),
+            'tasks'=> new JsonResponse($tasks)  ,
         ]);
     }
 

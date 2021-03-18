@@ -17,7 +17,7 @@ class NewInvoiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('designation', CollectionType::class, [
+            ->add('designations', CollectionType::class, [
                 'entry_type' => NewDesignationType::class,
                 'entry_options' => ['label' => 'false'],
                 'allow_add' => true,

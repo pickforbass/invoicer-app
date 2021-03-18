@@ -36,17 +36,17 @@
                 </tr>
             </thead>
             <tbody id="table-body"
-                   data-prototype = "{{ form_row(new_invoice.designation.vars.prototype)|e('html_attr') }}">
+                   data-prototype = "{{ form_row(new_invoice.designations.vars.prototype)|e('html_attr') }}">
 
-            {% form_theme new_invoice.designation _self %}
+            {% form_theme new_invoice.designations  _self %}
 
-            <tr id = '{{ new_invoice.designation.vars.prototype.vars.id }}'>
+            <tr id = '{{ new_invoice.designations.vars.prototype.vars.id }}'>
 
-            {% block new_invoice_designation_vars_designation_widget %}
+            {% block new_invoice_designations_vars_designation_widget %}
                 <td>
-                    <select name="{{ new_invoice.designation.vars.prototype.designation.vars.full_name}}"
-                            id="{{ new_invoice.designation.vars.prototype.designation.vars.id }}">
-                        {% for choice in new_invoice.designation.vars.prototype.designation.vars.choices %}
+                    <select name="{{ new_invoice.designations.vars.prototype.designation.vars.full_name}}"
+                            id="{{ new_invoice.designations.vars.prototype.designation.vars.id }}">
+                        {% for choice in new_invoice.designations.vars.prototype.designation.vars.choices %}
                         <option value="{{ choice.data.fee }}">{{ choice.label }}</option>
                         {% endfor %}
                     </select>
@@ -55,12 +55,12 @@
 
                 <td><input type="text"></td>
                 <td><input type="text"
-                           id="new_invoice_designation___name___fee">
+                           id="new_invoice_designations___name___fee">
                 </td>
                 <td>
                     <input type="text"
-                           name="{{ new_invoice.designation.vars.prototype.price.vars.full_name}}"
-                           id="{{ new_invoice.designation.vars.prototype.price.vars.id }}">
+                           name="{{ new_invoice.designations.vars.prototype.price.vars.full_name}}"
+                           id="{{ new_invoice.designations.vars.prototype.price.vars.id }}">
                 </td>
 
             </tr>
